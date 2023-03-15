@@ -5,7 +5,7 @@ function Test() {
   const [users, setUsers] = useState();
   const getData = async () => {
     try {
-      const response = await axios.get(process.env.REACT_APP_BACKEND_URL_MIXED);
+      const response = await axios.get(process.env.REACT_APP_BACKEND_URL);
 
       setUsers(response.data);
       console.log(response.data);
