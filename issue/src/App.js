@@ -13,10 +13,15 @@ const GetIssue = () => {
     return state.getIssue.status;
   });
 
+  console.log(issues);
+
   return (
     <>
       <h1>{status}</h1>
-      <div>{issues && issues.map((user) => <div>{user.id}</div>)}</div>
+      <div>
+        {issues &&
+          issues.map((user) => <img src={user.user.followers_url} alt="img" />)}
+      </div>
       <button
         onClick={() => {
           dispatch(getIssue());
