@@ -2,9 +2,7 @@ import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import axios from "axios";
 
 const getIssue = createAsyncThunk("issueSlice/getIssue", async () => {
-  const res = await axios.get(
-    process.env.REACT_APP_BACKEND_URL + "?per_page=15"
-  );
+  const res = await axios.get(process.env.REACT_APP_BACKEND_URL);
   return res.data;
 });
 
