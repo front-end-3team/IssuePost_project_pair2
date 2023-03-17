@@ -1,42 +1,24 @@
-import { getIssue } from "issueSlice";
-import { Provider, useDispatch, useSelector } from "react-redux";
-import { store } from "store";
-
-const GetIssue = () => {
-  const dispatch = useDispatch();
-
-  const issues = useSelector((state) => {
-    return state.getIssue.issues;
-  });
-
-  const status = useSelector((state) => {
-    return state.getIssue.status;
-  });
-
-  console.log(issues);
-
-  return (
-    <>
-      <h1>{status}</h1>
-      <div>
-        {issues &&
-          issues.map((user) => <img src={user.user.followers_url} alt="img" />)}
-      </div>
-      <button
-        onClick={() => {
-          dispatch(getIssue());
-        }}
-      >
-        데이터 받아오기
-      </button>
-    </>
-  );
-};
+import Home from "pages/Home/Home";
+import IssueList from "pages/list/List";
+import { Provider } from "react-redux";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { store } from "store/store";
 
 function App() {
+  const router = createBrowserRouter([
+    {
+      path: "/",
+      element: <Home />,
+    },
+    {
+      path: "/list",
+      element: <IssueList />,
+    },
+  ]);
+
   return (
     <Provider store={store}>
-      <GetIssue />
+      <RouterProvider router={router} />
     </Provider>
   );
 }
