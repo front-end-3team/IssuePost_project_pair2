@@ -1,0 +1,9 @@
+@font-face {
+    font-family: 'googleSairaCondensed';
+    src: url(../assets/font/SairaCondensed-SemiBold.ttf);
+}
+
+@font-face {
+    font-family: 'googleListFont';
+    src: url(../assets/font/SairaCondensed-Thin.ttf);
+}
